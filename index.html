@@ -15,7 +15,7 @@
                 <p id="div6a">0</p>
             </div>
             <div class="div2">
-                <div class="div2a" id="c" onclick="">
+                <div class="div2a" id="c" onclick="reset()">
                     <p>C</p>
                 </div>
                 <div class="div2b" id="1" onclick="eingabeZahl(1)">
@@ -27,13 +27,13 @@
                 <div class="div2d" id="7" onclick="eingabeZahl(7)">
                     <p>7</p>
                 </div>
-                <div class="div2e" id="pi" onclick="">
+                <div class="div2e" id="pi" onclick="pi()">
                     <p>PI</p>
                 </div>
             </div>
 
             <div class="div3">
-                <div class="div3a" id="zurück">
+                <div class="div3a" id="zurück" onclick="zurueck()">
                     <p><--</p>
                 </div>
                 <div class="div3b" id="2" onclick="eingabeZahl(2)">
@@ -51,7 +51,7 @@
             </div>
 
             <div class="div4">
-                <div class="div4a" id="prozent" onclick="test()">
+                <div class="div4a" id="prozent" onclick="operation('%')">
                     <p>%</p>
                 </div>
                 <div class="div4b" id="3" onclick="eingabeZahl(3)">
@@ -69,19 +69,19 @@
             </div>
 
             <div class="div5">
-                <div class="div5a" id="geteilt">
+                <div class="div5a" id="geteilt" onclick="operation('/')">
                     <p>/</p>
                 </div>
-                <div class="div5b" id="mal">
+                <div class="div5b" id="mal" onclick="operation('*')">
                     <p>X</p>
                 </div>
-                <div class="div5c" id="minus">
+                <div class="div5c" id="minus" onclick="operation('-')">
                     <p>-</p>
                 </div>
                 <div class="div5d" id="plus" onclick="operation('+')">
                     <p>+</p>
                 </div>
-                <div class="div5e" id="istgleich">
+                <div class="div5e" id="istgleich" onclick="istGleich()">
                     <p>=</p>
                 </div>
             </div>    

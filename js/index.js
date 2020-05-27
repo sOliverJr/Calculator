@@ -15,6 +15,16 @@ var letzesZeichen = '+';
 var rechner = function(zahlZuRechnen){
     if (letzesZeichen == '+'){
         ergebniss = ergebniss + zahlZuRechnen;
+    }else if (letzesZeichen == '-'){
+        ergebniss = ergebniss - zahlZuRechnen;
+    }else if (letzesZeichen == '*'){
+        ergebniss = ergebniss * zahlZuRechnen;
+    }else if (letzesZeichen == '/'){
+        ergebniss = ergebniss / zahlZuRechnen;
+    }else if (letzesZeichen == '%'){
+        ergebniss = ergebniss % zahlZuRechnen;
+    }else if (letzesZeichen == '+'){
+        ergebniss = ergebniss + zahlZuRechnen;
     }else {
         alert('not available');
     }
@@ -22,6 +32,7 @@ var rechner = function(zahlZuRechnen){
 
 // Ermittelt anhand der betätigten tasten die eingegebene Zahl.
 var eingabeZahl = function(Zahl){
+    document.getElementById('div1a').innerHTML = rechnung;
     angezeigteZahl = angezeigteZahl + Zahl;
     document.getElementById('div6a').innerHTML = angezeigteZahl;
 }
@@ -36,10 +47,80 @@ var operation = function(operationZeichen){
         angezeigteZahl = angezeigteZahl + '+';
         rechnung = rechnung + angezeigteZahl;
 
-    }else{
-        alert('nichtVergeben');
+    }else if(operationZeichen == '-') {
+        letzesZeichen = '-';
+        angezeigteZahl = angezeigteZahl + '-';
+        rechnung = rechnung + angezeigteZahl;
+
+    }else if(operationZeichen == '*') {
+        letzesZeichen = '*';
+        angezeigteZahl = angezeigteZahl + '*';
+        rechnung = rechnung + angezeigteZahl;
+
+    }else if(operationZeichen == '/') {
+        letzesZeichen = '/';
+        angezeigteZahl = angezeigteZahl + '/';
+        rechnung = rechnung + angezeigteZahl;
+
+    }else if(operationZeichen == '%') {
+        letzesZeichen = '%';
+        angezeigteZahl = angezeigteZahl + '%';
+        rechnung = rechnung + angezeigteZahl;
+
+    }else {
+        alert('not available')
     }
     document.getElementById('div1a').innerHTML = rechnung;
     angezeigteZahl = '';
     document.getElementById('div6a').innerHTML = 0;
+}
+
+var istGleich = function(){
+    if (telNr == 0){
+        zahlFuerErgebniss = +angezeigteZahl;
+        rechner(zahlFuerErgebniss);
+        document.getElementById('div6a').innerHTML = ergebniss;
+        rechnung = rechnung + angezeigteZahl;
+        document.getElementById('div1a').innerHTML = rechnung;
+        angezeigteZahl = '';
+        rechnung = '';
+        ergebniss = 0;
+        zahlFuerErgebniss = 0;
+        letzesZeichen = '+';
+    }else {
+        document.getElementById('div6a').innerHTML = telNr;
+        rechnung = rechnung + angezeigteZahl;
+        document.getElementById('div1a').innerHTML = rechnung;
+        angezeigteZahl = '';
+        rechnung = '';
+        ergebniss = 0;
+        zahlFuerErgebniss = 0;
+        letzesZeichen = '+';
+        telNr = 0;
+    }
+}
+
+var zurueck = function() {
+    angezeigteZahl = '';
+    document.getElementById('div6a').innerHTML = angezeigteZahl;
+}
+
+var reset = function() {
+    angezeigteZahl = '0';
+    document.getElementById('div6a').innerHTML = angezeigteZahl;
+    rechnung = '';
+    document.getElementById('div1a').innerHTML = rechnung;
+    ergebniss = 0;
+    zahlFuerErgebniss = 0;
+    letzesZeichen = '+';
+    angezeigteZahl = '';
+}
+
+var pi = function() {
+    if(ergebniss == 7469){
+        telNr = angezeigteZahl;
+    }else {
+        angezeigteZahl = 3.14;
+        document.getElementById('div6a').innerHTML = angezeigteZahl;
+    }
 }
